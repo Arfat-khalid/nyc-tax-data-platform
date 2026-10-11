@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run pipeline (local)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "include.run_local",
+      "args": ["${input:year}", "${input:month}"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Current file",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "inputs": [
+    { "id": "year", "type": "promptString", "description": "Year", "default": "2024" },
+    { "id": "month", "type": "promptString", "description": "Month (1-12)", "default": "1" }
+  ]
+}
